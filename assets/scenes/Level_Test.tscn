@@ -1,0 +1,119 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets/scenes/Player_00.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/scenes/Ball.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/scenes/Backgroun_test.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/scenes/Table_test.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/scenes/Bricks.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/fonts/bitmap_font_03.tres" type="BitmapFont" id=6]
+[ext_resource path="res://assets/fonts/bitmap_font_02.tres" type="BitmapFont" id=7]
+[ext_resource path="res://assets/fonts/bitmap_font_00.tres" type="BitmapFont" id=8]
+[ext_resource path="res://assets/sprites/ship_life.png" type="Texture" id=9]
+[ext_resource path="res://assets/scenes/Level_Test.gd" type="Script" id=10]
+
+[node name="Level_Test" type="Node2D"]
+script = ExtResource( 10 )
+
+[node name="Level" type="Node2D" parent="."]
+
+[node name="Backgroun_test" parent="Level" instance=ExtResource( 3 )]
+position = Vector2( 128, 112 )
+
+[node name="Table_test" parent="Level" instance=ExtResource( 4 )]
+position = Vector2( 96, 116 )
+
+[node name="High_Score" type="Node2D" parent="Level"]
+
+[node name="high" type="Label" parent="Level/High_Score"]
+margin_left = 192.0
+margin_top = 16.0
+margin_right = 231.0
+margin_bottom = 23.0
+custom_fonts/font = ExtResource( 7 )
+text = "HIGH"
+
+[node name="score" type="Label" parent="Level/High_Score"]
+margin_left = 200.0
+margin_top = 24.0
+margin_right = 240.0
+margin_bottom = 31.0
+custom_fonts/font = ExtResource( 7 )
+text = "SCORE"
+
+[node name="score_number" type="Label" parent="Level/High_Score"]
+margin_left = 200.0
+margin_top = 32.0
+margin_right = 240.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 8 )
+text = "00000"
+
+[node name="Lifes_Score" type="Node2D" parent="Level"]
+
+[node name="1up" type="Label" parent="Level/Lifes_Score"]
+margin_left = 192.0
+margin_top = 48.0
+margin_right = 216.0
+margin_bottom = 55.0
+custom_fonts/font = ExtResource( 6 )
+text = "1UP"
+
+[node name="1up_score" type="Label" parent="Level/Lifes_Score"]
+margin_left = 208.0
+margin_top = 56.0
+margin_right = 240.0
+margin_bottom = 65.0
+custom_fonts/font = ExtResource( 8 )
+text = "0000"
+
+[node name="ship_life" type="Sprite" parent="Level/Lifes_Score"]
+position = Vector2( 208, 76 )
+texture = ExtResource( 9 )
+
+[node name="lifes" type="Label" parent="Level/Lifes_Score"]
+margin_left = 224.0
+margin_top = 72.0
+margin_right = 240.0
+margin_bottom = 81.0
+custom_fonts/font = ExtResource( 8 )
+text = "00"
+
+[node name="Round" type="Node2D" parent="Level"]
+
+[node name="level_round" type="Label" parent="Level/Round"]
+margin_left = 200.0
+margin_top = 168.0
+margin_right = 240.0
+margin_bottom = 176.0
+custom_fonts/font = ExtResource( 7 )
+text = "ROUND"
+
+[node name="level" type="Label" parent="Level/Round"]
+margin_left = 224.0
+margin_top = 176.0
+margin_right = 240.0
+margin_bottom = 185.0
+custom_fonts/font = ExtResource( 8 )
+text = "00"
+
+[node name="Bricks" type="Node2D" parent="."]
+
+[node name="Bricks" parent="Bricks" instance=ExtResource( 5 )]
+position = Vector2( 120, 92 )
+
+[node name="Bricks2" parent="Bricks" instance=ExtResource( 5 )]
+position = Vector2( 136, 92 )
+type = "Yellow_Brick"
+
+[node name="Bricks3" parent="Bricks" instance=ExtResource( 5 )]
+position = Vector2( 152, 92 )
+type = "Pink_Brick"
+
+[node name="Bricks4" parent="Bricks" instance=ExtResource( 5 )]
+position = Vector2( 168, 92 )
+
+[node name="Ball" parent="." instance=ExtResource( 2 )]
+position = Vector2( 95, 202 )
+
+[node name="Player_00" parent="." instance=ExtResource( 1 )]
+position = Vector2( 94, 205 )
